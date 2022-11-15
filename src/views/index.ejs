@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- file css image js nó hiểu là ở public roi -->
-    <link rel="stylesheet" href="/css/styles.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- file css image js nó hiểu là ở public roi -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <title>Document</title>
 </head>
+
 <body>
-    <h1>Hello</h1>
+  <div>
+    <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+    <div style="padding:20px;margin-top:30px;height:1500px;">
+      <table class="w3-table-all">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for( let i=0; i <dataUsers.length;i++){%>
+            <tr>
+              <td>
+                <%= dataUsers[i].id %>
+              </td>
+              <td>
+                <%= dataUsers[i].firstName %>
+              </td>
+              <td>
+                <%= dataUsers[i].lastName %>
+              </td>
+              <td>
+                <a href="/detail/user/<%=dataUsers[i].id%>">Detail</a>
+                <button type="submit">Delete</button>
+                <button type="submit">Edit</button>
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+
+      </table>
+    </div>
 </body>
+
 </html>
